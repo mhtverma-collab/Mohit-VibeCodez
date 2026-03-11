@@ -1,0 +1,5 @@
+{
+  "name": "ProPlan: Construction Scheduler",
+  "description": "A professional construction project scheduling tool with Microsoft Project-inspired interface, Gantt chart visualization, and automated duration calculation based on production rates.",
+  "requestFramePermissions": []
+}

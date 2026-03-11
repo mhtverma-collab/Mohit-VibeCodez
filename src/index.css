@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 bg-slate-50;
+  }
+}
+
+/* Custom scrollbar for that MS Project feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full border-2 border-slate-100 hover:bg-slate-400;
+}
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 10mm;
+  }
+  
+  body {
+    background: white !important;
+  }
+
+  header, .no-print, button, select, input[type="date"], input[type="number"] {
+    display: none !important;
+  }
+
+  main {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .flex-1 {
+    overflow: visible !important;
+  }
+
+  /* Ensure table and gantt are visible together */
+  .w-\[1000px\] {
+    width: 55% !important;
+    float: left;
+    border-right: 1px solid #e2e8f0 !important;
+  }
+
+  .flex-1.flex.flex-col {
+    width: 45% !important;
+    float: left;
+    overflow: visible !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    border: 1px solid #e2e8f0 !important;
+    padding: 4px !important;
+  }
+
+  /* Show text values instead of inputs during print */
+  .print-only {
+    display: block !important;
+  }
+
+  input, select {
+    display: none !important;
+  }
+
+  .gantt-container {
+    overflow: visible !important;
+  }
+
+  .h-screen {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
